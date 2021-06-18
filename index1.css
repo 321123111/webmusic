@@ -1,0 +1,205 @@
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 容器 */
+.container {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	background-color: cornflowerblue;
+}
+
+/* 播放器盒子 */
+.musicbox {
+	position: relative;
+	height: 270px;
+	width: 430px;
+	margin: 220px auto;
+	border-radius: 6px;
+	border: 6px solid white;
+}
+
+/* 音乐信息 */
+.music-detail {
+	position: absolute;
+	height: 140px;
+	width: 100%;
+}
+
+/* 音乐图片 */
+.music-img {
+	float: left;
+	height: 110px;
+	width: 110px;
+	margin: 15px 0 10px 35px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 5px solid whitesmoke;
+}
+
+.musicimg {
+	height: 110px;
+	width: 110px;
+	animation: Cycle 10s linear infinite;
+}
+
+/* 音乐信息 */
+.music-info {
+	float: right;
+	height: 110px;
+	width: 200px;
+	margin: 25px 70px 10px 0;
+}
+
+.name {
+	height: 30px;
+	width: 200px;
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 19px;
+	text-align: center;
+	margin-top: 20px;
+	cursor: default;
+}
+
+.auther {
+	height: 20px;
+	width: 200px;
+	line-height: 20px;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 5px;
+	cursor: default;
+}
+
+/* 音乐控制器 */
+.music-control {
+	position: relative;
+	height: 130px;
+	width: 430px;
+	margin-top: 140px;
+}
+
+/* 进度框 */
+.runningbox {
+	display: flex;
+	position: absolute;
+	height: 70px;
+	width: 430px;
+}
+
+.running {
+	width: 60%;
+	height: 6px;
+	margin: 32px auto;
+	border-radius: 3px;
+	background-color: gainsboro;
+}
+
+.running1 {
+	height: 6px;
+	width: 0;
+	border-radius: 3px;
+	background-color: grey;
+}
+
+.start {
+	height: 70px;
+	float: left;
+	line-height: 70px;
+	margin-left: 10%;
+	font-size: 14px;
+}
+
+.end {
+	height: 70px;
+	margin-right: 10%;
+	line-height: 70px;
+	float: right;
+	font-size: 14px;
+}
+
+
+/* 控制按钮 */
+.control {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	height: 35px;
+	line-height: 35px;
+	margin: 70px 15% 0;
+	width: 70%;
+}
+
+.music-control span {
+	font-size: 35px;
+	border-radius: 50%;
+	cursor: default;
+}
+
+.music-control span:hover {
+	background-color: gainsboro;
+}
+
+.vulme {
+	display: flex;
+	width: 35px;
+	transition: width 1.5s;
+}
+
+.vulme span {
+	margin: 1px;
+	font-size: 33px;
+}
+
+.vulme:hover {
+	background-color: white;
+	border-radius: 17.5px;
+	width: 150px;
+}
+
+.vulmeBar {
+	height: 5px;
+	margin: 15px 7.5px;
+	border-radius: 2.5px;
+	background-color: gainsboro;
+}
+
+.vulmeBar1 {
+	height: 5px;
+	border-radius: 2.5px;
+	background-color: seagreen;
+}
+
+/* 图片旋转 */
+@keyframes Cycle {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(180deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* 引入icon */
+@font-face {
+	font-family: 'iconfont';
+	src: url('../font/iconfont.ttf?t=1621521025244') format('truetype');
+}
+
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

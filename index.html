@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // sessionStorage.getItem('服务器返回token') 储存注册页服务器返回的token秘钥 用来判断
+        // 推荐写在 head里面 提前效验
+        let token = sessionStorage.getItem('mykey')
+        // 进行判断 是否符合条件 
+        if (!token) {
+            // 不符合条件 跳转到登录页面 阻止进入
+            location.href = './getout.html'
+
+        }
+    </script>
+    <link rel="stylesheet" href="./lib/layui/css/layui.css">
+    <link rel="stylesheet" href="./assets/index.css">
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+</head>
+
+<body>
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <!-- 头部logo -->
+            <div class="layui-logo">
+                <img src="./images/logo.png" alt="">
+            </div>
+
+            <!-- 头部区域（可配合layui 已有的水平导航） -->
+            <ul class="layui-nav layui-layout-right">
+                <!-- 头部导航 -->
+                <li class="layui-nav-item">
+                    <!-- 右上角：用户信息 -->
+                    <a href="javascript:;">
+                        <div class="userinfo">
+                            <!-- 如果有头像就显示头像信息，否则显示默认的填充位
+                            <div class="avatar">L</div>
+                            <div class="msg">欢迎XXX</div> -->
+                        </div>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a target="indexiframeAll" href="./baseiframe.html">基本资料</a></dd>
+                        <dd><a target="indexiframeAll" href="./imgiframe.html">修改头像</a></dd>
+                        <dd><a target="indexiframeAll" href="./passwordiframe.html">修改密码</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item" id="LogOut"><a href=""><i class="layui-icon layui-icon-logout"></i> 退出</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree " lay-filter="test" lay-shrink='all'>
+                    <!--左侧菜单：用户信息-->
+                    <div class="userinfo">
+                        <!-- 左侧的用户信息欢迎 -->
+                        <!-- <div class="avatar">L</div>
+                        <div class="msg">欢迎XXX</div> -->
+                    </div>
+                    <li class="layui-nav-item layui-nav-itemed layui-this">
+
+                        <!-- a标签配合父窗口iframe 点击跳转到指定的 父窗口内容 -->
+                        <!-- target=""是绑定的iframe父窗口 herf是父窗口显示的内容地址 不设置会叠加-->
+                        <a class="" href="./indexiframe.html" target="indexiframeAll">首页</a>
+
+                    </li>
+                    <li class="layui-nav-item">
+                        <a class="" href="javascript:;">音乐管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a target="indexiframeAll" href="./article-list.html">音乐类别</a></dd>
+                            <dd><a target="indexiframeAll" href="./newList.html">音乐列表</a></dd>
+                            <dd><a href="javascript:;">menu item 1-3</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">个人中心</a>
+                        <dl class="layui-nav-child">
+                            <!-- 需要切换点击切换的a标签 -->
+                            <dd><a target="indexiframeAll" href="./baseiframe.html">基本资料</a></dd>
+                            <dd><a target="indexiframeAll" href="./imgiframe.html">修改头像</a></dd>
+                            <dd><a target="indexiframeAll" href="./passwordiframe.html">修改密码</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- 内容主体区域 -->
+        <div class="layui-body">
+
+
+            <!-- 设置 iframe 父窗口 name ='' -->
+            <iframe src="./indexiframe.html" name="indexiframeAll" frameborder="0"></iframe>
+        </div>
+
+        <!-- 底部固定区域 -->
+        <div class="layui-footer">
+
+            底部固定区域
+        </div>
+    </div>
+
+
+
+    <script src="./lib/nprogress/nprogress.js"></script>
+    <script src="./lib/layui/layui.all.js"></script>
+    <script src="./lib/jquery.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./lib/layui/css/layui.css">
+  <link rel="stylesheet" href="./assets/article-list.css">
+</head>
+
+<body>
+  <script type="text/html" id="add-tpl">
+    <!-- 添加文章分类 -->
+  <form id="add-form" class="layui-form" style="margin: 15px 30px 0 0">
+    <!-- 第0行 添加隐藏域 储存id 与服务器进行比对 -->
+    <input type="hidden" name="Id" id="classI">
+
+    <!-- 第一行：类别名称 -->
+    <div class="layui-form-item">
+      <label class="layui-form-label">类别名称</label>
+      <div class="layui-input-block">
+        <input type="text" name="name" required lay-verify="required" placeholder="请输入标题" autocomplete="off"
+          class="layui-input" id="classN" value="">
+      </div>
+    </div>
+    <!-- 第二行：类别别名 -->
+    <div class="layui-form-item">
+      <label class="layui-form-label">类别别名</label>
+      <div class="layui-input-block">
+        <input type="text" name="alias" required lay-verify="required" placeholder="请输入别名" autocomplete="off"
+          class="layui-input" id="classL">
+      </div>
+    </div>
+    <!-- 第三行：按钮 -->
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <button class="layui-btn" lay-submit lay-filter="formDemo" id="Submit">编辑提交</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+      </div>
+    </div>
+  </form>
+  </script>
+  <script type="text/html" id="edit-tpl">
+    <!-- 添加文章分类 -->
+  <form id="edit-form" class="layui-form" lay-filter='editForm' style="margin: 15px 30px 0 0">
+    <!-- 第一行：类别名称 -->
+    <input type="hidden" name="Id">
+    <div class="layui-form-item">
+      <label class="layui-form-label">类别名称</label>
+      <div class="layui-input-block">
+        <input type="text" name="name" required lay-verify="required" placeholder="请输入标题" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <!-- 第二行：类别别名 -->
+    <div class="layui-form-item">
+      <label class="layui-form-label">类别别名</label>
+      <div class="layui-input-block">
+        <input type="text" name="alias" required lay-verify="required" placeholder="请输入别名" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <!-- 第三行：按钮 -->
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <button class="layui-btn" lay-submit lay-filter="formDemo">确认编辑</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+      </div>
+    </div>
+  </form>
+  </script>
+  <!-- 定义 添加 弹出层 模板 要打印的大型html模板 -->
+  <script type="text/html" id="add-tpl">
+  <form id="add-form" class="layui-form" style="margin: 15px 30px 0 0">
+      <!-- 第一行：类别名称 -->
+      <div class="layui-form-item">
+      <label class="layui-form-label">类别名称</label>
+      <div class="layui-input-block">
+          <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" id="classN">
+      </div>
+      </div>
+      <!-- 第二行：类别别名 -->
+      <div class="layui-form-item">
+      <label class="layui-form-label">类别别名</label>
+      <div class="layui-input-block">
+          <input type="text" name="alias" required  lay-verify="required" placeholder="请输入别名" autocomplete="off" class="layui-input" id="classL">
+      </div>
+      </div>
+      <!-- 第三行：按钮 -->
+      <div class="layui-form-item">
+      <div class="layui-input-block">
+          <button class="layui-btn" lay-submit lay-filter="formDemo" id="tureAdd">确认添加</button>
+          <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+      </div>
+      </div>
+  </form>
+</script>
+  </head>
+
+  <body>
+    <div class="layui-card">
+      <div class="layui-card-header cate-title">
+        <span>文章分类管理</span>
+        <button id="addCate" type="button" class="layui-btn layui-btn-normal layui-btn-sm">添加分类</button>
+      </div>
+      <div class="layui-card-body">
+        <!-- 表格区域 -->
+        <!-- 表格区域 -->
+        <table class="layui-table">
+          <colgroup>
+            <col width="40%">
+            <col width="40%">
+            <col width="20%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th>分类名称</th>
+              <th>分类别名</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <!--           
+          <tbody>
+            <td>123</td>
+            <td>123</td>
+            <td>123</td>
+          </tbody> -->
+
+        </table>
+      </div>
+    </div>
+
+    <script src="./lib/layui/layui.all.js"></script>
+    <script src="./lib/jquery.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/article-list.js"></script>
+  </body>
+
+</html>

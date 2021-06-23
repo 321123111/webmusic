@@ -1,0 +1,66 @@
+html,
+body {
+  background: url(../images/login_bg.jpg);
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.ipnits {
+  width: 400px;
+  height: 310px;
+  overflow: hidden;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ipnits .title {
+  background: url(../images/login_title.png) no-repeat;
+  height: 60px;
+  background-position: center;
+}
+
+.ipnits .login-form,
+.ipnits .reg-form {
+  padding: 0 30px;
+}
+
+.ipnits .Login {
+  text-align: right;
+  margin-top: 15px;
+}
+
+.ipnits .layui-input {
+  padding-left: 35px;
+}
+
+.layui-form-item {
+  position: relative;
+}
+
+.buttomT,
+.buttomI {
+  position: absolute;
+  top: 30%;
+  left: 10px;
+}
+
+.actionL,
+.actionO {
+  float: right
+}
+
+.actionO {
+  display: none;
+}
+
+.sure {
+  display: none;
+}
+
+.enroll {
+  display: none;
+}
